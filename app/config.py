@@ -21,7 +21,7 @@ class Settings(BaseSettings):
     app_name: str = "LangGraph API"
     app_version: str = "0.3.0"
     environment: Literal["development", "test", "staging", "production"] = "development"
-    database_url: str = "sqlite:///./auth.db"
+    database_url: str = "mysql+pymysql://root:password@localhost:3306/langgraph?charset=utf8mb4"
     database_pool_size: int = Field(default=10, ge=1, le=100)
     database_max_overflow: int = Field(default=20, ge=0, le=100)
     database_pool_timeout: int = Field(default=30, ge=1, le=300)

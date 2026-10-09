@@ -10,6 +10,18 @@ Copy-Item .env.example .env
 uvicorn main:app --reload
 ```
 
+The default database is MySQL. Before starting the application, update `DATABASE_URL` in `.env` with your MySQL credentials and database name, for example:
+
+```dotenv
+DATABASE_URL=mysql+pymysql://root:your-password@localhost:3306/langgraph?charset=utf8mb4
+```
+
+Create the database once if it does not exist:
+
+```sql
+CREATE DATABASE langgraph CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+```
+
 Development runs Alembic migrations at startup. In production, run migrations during deployment:
 
 ```bash
