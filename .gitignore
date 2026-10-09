@@ -1,0 +1,9 @@
+.env
+auth.db
+auth.db-shm
+auth.db-wal
+__pycache__/
+*.py[cod]
+.venv/
+.server.stdout.log
+.server.stderr.log
